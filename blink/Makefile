@@ -9,6 +9,6 @@ BOOTLOADER_PARENT = /usr/share/arduino/hardware/arduino/avr/bootloaders
 BOARD_TAG = diecimila
 BOARD_SUB = atmega328
 MONITOR_PORT = /dev/ttyUSB0
-ARDUINO_LIBS = 
+ARDUINO_LIBS =
 
 include /usr/share/arduino/Arduino.mk

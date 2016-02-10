@@ -1,15 +1,30 @@
-// First project
+/* Blink a LED, without a delay. */
 
-/* Blink a LED. */
+// built in led is on pin 13
+const int ledPin = 13;
+int ledState = LOW;
+
+unsigned long previousMillis = 0;
+
+const long interval = 1000;
 
 void setup() {
-  // built in led is on pin 13
-  pinMode(13, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13, LOW);
-  delay(1000);
+
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+  }
+
+  digitalWrite(ledPin, ledState);
 }
